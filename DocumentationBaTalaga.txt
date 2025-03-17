@@ -1,0 +1,35 @@
+Flow:
+activity_main -> [login button clicked] -> activity_main_screen
+
+login.java | fragment_login.xml
+- userNameLayout & username
+- userPasswordLayout & userPassword
+- login [Button]
+
+HomeItemsFragment.java | fragment_home_items.xml
+- itemAdd [FloatingActionButton]
+	-> DialogFragment: AddItemFragment.java | fragment_add_item.xml
+		-> addItemNameLayout & addItemName
+		-> addItemCategoryLayout & addItemCategory
+		-> addItemQuantityLayout & addItemQuantity
+		-> addItemMPriceLayout & addItemMPrice
+		-> addItemSRPLayout & addItemSRP
+- itemListRecyclerView [RecyclerView]
+	-> adapters > ItemListAdapter
+	-> model > ItemList
+	-> ItemList(itemName[String], mPrice[Double], SRP[Double], category[String], quantity[Int])
+
+HomeLogsFragment.java | fragment_home_logs.xml
+- logListRecyclerView [RecyclerView]
+	-> adapters > LogListAdapter
+	-> model > LogList
+	-> ItemList(itemName[String], mPrice[Double], SRP[Double], category[String], quantity[Int], date[Date])
+	** Triggered by an item from recycler view being clicked; not implemented in UI yet **
+	-> DialogFragment: EditItemFragment.java | fragment_edit_item.xml
+		-> editItemNameLayout & editItemName		[Input]
+		-> editItemCategoryLayout & editItemCategory	[Input]
+		-> editItemQuantityLayout & editItemQuantity	[Input]
+		-> editItemQuantitySubtract 			[ImageButton]
+		-> editItemQuantityAdd 				[ImageButton]
+		-> editItemMPriceLayout & editItemMPrice	[Input]
+		-> eitItemSRPLayout & editItemSRP		[Input]
