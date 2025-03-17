@@ -1,5 +1,5 @@
 Flow:
-activity_main -> [login button clicked] -> activity_main_screen
+activity_main -> [login button clicked] -> activity_main_screen[Switchable: fragment_home_items <-> fragment_home_logs; nav_home]
 
 login.java | fragment_login.xml
 - userNameLayout & username
