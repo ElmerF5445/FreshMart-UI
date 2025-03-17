@@ -2,27 +2,29 @@ Flow:
 activity_main -> [login button clicked] -> activity_main_screen[Switchable: fragment_home_items <-> fragment_home_logs; nav_home]
 
 login.java | fragment_login.xml
-- userNameLayout & username
-- userPasswordLayout & userPassword
-- login [Button]
+- userNameLayout & username		[Input]
+- userPasswordLayout & userPassword	[Input]
+- login 				[Button]
 
 HomeItemsFragment.java | fragment_home_items.xml
 - itemAdd [FloatingActionButton]
 	-> DialogFragment: AddItemFragment.java | fragment_add_item.xml
-		-> addItemNameLayout & addItemName
-		-> addItemCategoryLayout & addItemCategory
-		-> addItemQuantityLayout & addItemQuantity
-		-> addItemMPriceLayout & addItemMPrice
-		-> addItemSRPLayout & addItemSRP
+		-> addItemNameLayout & addItemName		[Input]
+		-> addItemCategoryLayout & addItemCategory	[Input]
+		-> addItemQuantityLayout & addItemQuantity	[Input]
+		-> addItemMPriceLayout & addItemMPrice		[Input]
+		-> addItemSRPLayout & addItemSRP		[Input]
 - itemListRecyclerView [RecyclerView]
 	-> adapters > ItemListAdapter
 	-> model > ItemList
+	-> card_item.xml
 	-> ItemList(itemName[String], mPrice[Double], SRP[Double], category[String], quantity[Int])
 
 HomeLogsFragment.java | fragment_home_logs.xml
 - logListRecyclerView [RecyclerView]
 	-> adapters > LogListAdapter
 	-> model > LogList
+	-> card_log.xml
 	-> ItemList(itemName[String], mPrice[Double], SRP[Double], category[String], quantity[Int], date[Date])
 	** Triggered by an item from recycler view being clicked; not implemented in UI yet **
 	-> DialogFragment: EditItemFragment.java | fragment_edit_item.xml
