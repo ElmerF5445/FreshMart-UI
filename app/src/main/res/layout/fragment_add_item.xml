@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItemFragment"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabarito_bold"
+        android:text="Add item"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item name"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:id="@+id/addItemNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addItemName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/gabarito"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item category"
+        app:layout_constraintTop_toBottomOf="@+id/addItemNameLayout"
+        android:id="@+id/addItemCategoryLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/addItemCategory"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/gabarito"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        app:layout_constraintTop_toBottomOf="@+id/addItemCategoryLayout"
+        android:id="@+id/addItemQuantityLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addItemQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/gabarito"
+            android:inputType="number"
+            android:numeric="signed" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addItemQuantityLayout">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:hint="MFG price"
+            android:id="@+id/addItemMPriceLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addItemMPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gabarito"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="SRP"
+            android:id="@+id/addItemSRPLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addItemSRP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/gabarito"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

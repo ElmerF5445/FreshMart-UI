@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Items" android:icon="@drawable/item_list" android:id="@+id/homeItemsFragment"></item>
+    <item android:title="Logs" android:icon="@drawable/logs" android:id="@+id/homeLogsFragment"></item>
+</menu>
